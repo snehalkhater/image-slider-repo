@@ -81,10 +81,47 @@
 <body>
     <div class="container">
         <h2>🖼️My Image Slider</h2>
-        <img src="./nature1.jpg" class="slide" alt="nature-img" id="slide" />
-        <img src="./lefthand.png" class="icon-hand icon-left" alt="left-hand-img" onclick="prev()" />
-        <img src="./righthand.png" class="icon-hand icon-right" alt="right-hand-img" onclick="next()" />
+        <img src="./images/nature1.jpg" class="slide" alt="nature-img" id="slide" />
+        <img src="./images/lefthand.png" class="icon-hand icon-left" alt="left-hand-img" onclick="prev()" />
+        <img src="./images/righthand.png" class="icon-hand icon-right" alt="right-hand-img" onclick="next()" />
     </div>
+    <script>
+        const images = [
+            "./images/nature1.jpg",
+            "./images/nature2.jpg",
+            "./images/nature3.jpg",
+            "./images/nature4.jpg",
+            "./images/nature5.jpg",
+            "./images/nature6.jpg"
+        ];
+
+        let currentIndex = 0;
+        const slide = document.getElementById("slide");
+
+        function next() {
+            if (Index < images.length - 1) {
+                Index++;
+                slide.src = images[Index];
+            }
+            else {
+                Index = 0;
+            }
+            slide.src = images[Index];
+
+
+        }
+        function prev() {
+            if (Index > 0) {
+                Index--;
+                slide.src = images[Index];
+            }
+            else {
+                Index = images.length - 1;
+            }
+            slide.src = images[Index];
+        }
+        setInterval(next, 2000);
+    </script>
 </body>
 
 </html>
