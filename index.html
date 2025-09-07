@@ -1,16 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Image Slider</title>
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #533939;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        position: relative;
+        width: 900px;
+        height: 500px;
+        background: #E5BEB5;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slide {
+        width: 600px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 12px;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    h2 {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #533939;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .icon-hand {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        opacity: 0.8;
+        transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .icon-hand:hover {
+        transform: translateY(-50%) scale(1.1);
+        opacity: 1;
+    }
+
+    .icon-left {
+        left: 20px;
+    }
+
+    .icon-right {
+        right: 20px;
+    }
+</style>
+
 <body>
-     <div class="container">
-    <h2>🖼️My Image Slider</h2>
-    <img src="./nature1.jpg" class="slide" alt="nature-img" id="slide" />
-    <img src="./lefthand.png"  class="icon-hand icon-left" alt="left-hand-img" onclick="prev()"/>
-    <img src="./righthand.png" class="icon-hand icon-right" alt="right-hand-img" onclick="next()"/>
-  </div>
+    <div class="container">
+        <h2>🖼️My Image Slider</h2>
+        <img src="./nature1.jpg" class="slide" alt="nature-img" id="slide" />
+        <img src="./lefthand.png" class="icon-hand icon-left" alt="left-hand-img" onclick="prev()" />
+        <img src="./righthand.png" class="icon-hand icon-right" alt="right-hand-img" onclick="next()" />
+    </div>
 </body>
+
 </html>
